@@ -2,10 +2,10 @@ package ru.yandex.practicum.delivery;
 
 public abstract class Parcel {
 
-    private String description;
-    private int weight;
-    private String deliveryAddress;
-    private int sendDay;
+    protected String description;
+    protected int weight;
+    protected String deliveryAddress;
+    protected int sendDay;
 
     public Parcel(String description, int weight, String deliveryAddress, int sendDay) {
         this.description = description;
@@ -14,7 +14,7 @@ public abstract class Parcel {
         this.sendDay = sendDay;
     }
 
-    public abstract int getBaseCost();
+    protected abstract int getBaseCost();
 
     public int calculateDeliveryCost() {
         return weight * getBaseCost();

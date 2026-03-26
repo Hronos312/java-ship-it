@@ -10,16 +10,16 @@ public class PerishableParcel extends Parcel {
     }
 
     @Override
-    public int getBaseCost() {
+    protected int getBaseCost() {
         return 3;
     }
 
     public boolean isExpired(int currentDay) {
-        return this.getSendDay() + timeToLive < currentDay;
+        return sendDay + timeToLive < currentDay;
     }
 
     @Override
     public String toString() {
-        return "Скоропортящаяся посылка: " + this.getDescription();
+        return "Скоропортящаяся посылка: " + description;
     }
 }

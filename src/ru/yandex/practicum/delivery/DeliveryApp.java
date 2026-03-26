@@ -11,7 +11,7 @@ public class DeliveryApp {
     private static ParcelBox<StandardParcel> standardParcelBox = new ParcelBox<>(100);
     private static ParcelBox<PerishableParcel> perishableParcelBox = new ParcelBox<>(100);
     private static ParcelBox<FragileParcel> fragileParcelBox = new ParcelBox<>(100);
-    private static List<FragileParcel> trackableParcels = new ArrayList<>();
+    private static List<Trackable> trackableParcels = new ArrayList<>();
 
     public static void main(String[] args) {
         boolean running = true;
@@ -98,9 +98,9 @@ public class DeliveryApp {
     }
 
     private static  void getReports() {
-        for (FragileParcel parcel : trackableParcels) {
-            System.out.println("Введите местонахождение для посылки " + parcel.getDescription() + ":");
-            String newLocation = scanner.next();
+        System.out.println("Введите местонахождение для посылок:");
+        String newLocation = scanner.next();
+        for (Trackable parcel : trackableParcels) {
             parcel.reportStatus(newLocation);
         }
     }

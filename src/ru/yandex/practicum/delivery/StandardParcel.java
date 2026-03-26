@@ -7,12 +7,12 @@ public class StandardParcel extends Parcel {
     }
 
     @Override
-    public int getBaseCost() {
+    protected int getBaseCost() {
         return 2;
     }
 
     @Override
     public String toString() {
-        return "Стандартная посылка: " + this.getDescription();
+        return "Стандартная посылка: " + description;
     }
 }
