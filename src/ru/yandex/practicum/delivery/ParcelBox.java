@@ -13,11 +13,11 @@ public class ParcelBox<T extends Parcel> {
     }
 
     public void addParcel(T parcel) {
-        if (currentWeight + parcel.weight > maxWeight) {
+        if (currentWeight + parcel.getWeight() > maxWeight) {
             System.out.println("Добавление в коробку невозможно: случится перевес");
         } else {
             box.add(parcel);
-            currentWeight += parcel.weight;
+            currentWeight += parcel.getWeight();
             System.out.println("Посылка добавлена");
         }
     }
